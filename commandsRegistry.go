@@ -5,7 +5,7 @@ import pokecache "Boot-Pokedex-Project-Go/internal"
 type cliCommand struct {
 	name        string
 	description string
-	callback    func(*config) error
+	callback    func(*config, string) error
 }
 
 var registry = map[string]cliCommand{
@@ -28,6 +28,11 @@ var registry = map[string]cliCommand{
 		name:        "mapb",
 		description: "Displays last 20 map locations",
 		callback:    commandMapB,
+	},
+	"explore": {
+		name:        "explore",
+		description: "Explores a specificed location and returns all pokemon that can be found",
+		callback:    commandExplore,
 	},
 }
 

@@ -7,7 +7,7 @@ import (
 	"net/http"
 )
 
-func commandMap(conf *config) error {
+func commandMap(conf *config, s string) error {
 	result := ShallowLocation{}
 	requestURL := "https://pokeapi.co/api/v2/location-area/"
 	if conf.nextLocationsURL != nil {

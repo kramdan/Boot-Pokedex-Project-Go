@@ -8,7 +8,7 @@ import (
 	"net/http"
 )
 
-func commandMapB(conf *config) error {
+func commandMapB(conf *config, s string) error {
 	result := ShallowLocation{}
 	requestURL := conf.pastLocationsURL
 	if requestURL == nil {

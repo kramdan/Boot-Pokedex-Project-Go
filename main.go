@@ -21,9 +21,13 @@ func main() {
 		text := reader.Text()
 		cleanText := cleanInput(text)
 		firstWord := cleanText[0]
+		secondWord := ""
+		if len(cleanText) > 1 {
+			secondWord = cleanText[1]
+		}
 		command, exists := runningConf.regis[firstWord]
 		if exists {
-			err := command.callback(&runningConf)
+			err := command.callback(&runningConf, secondWord)
 			if err != nil {
 				fmt.Printf("%v\n", err)
 			} else {
