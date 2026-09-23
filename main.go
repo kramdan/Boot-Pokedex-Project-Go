@@ -10,9 +10,11 @@ import (
 
 func main() {
 	runningConf := config{
-		regis: registry,
-		cache: pokecache.NewCache(10 * time.Second),
+		regis:   registry,
+		cache:   pokecache.NewCache(10 * time.Second),
+		pokeDex: NewPokeDex(),
 	}
+
 	reader := bufio.NewScanner(os.Stdin)
 	reader.Err()
 	for {
